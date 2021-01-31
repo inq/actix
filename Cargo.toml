@@ -21,13 +21,13 @@ name = "actix"
 path = "src/lib.rs"
 
 [features]
-default = ["resolver", "derive"]
+default = ["resolver", "macros"]
 
 # DNS resolver
 resolver = ["trust-dns-proto", "trust-dns-resolver"]
 
-# Re-exports derive macros from actix-derive
-derive = ["actix_derive"]
+# Re-exports derive macros from actix-derive and enables `#[actix::main]`.
+macros = ["actix_derive"]
 
 # Adds assertion to prevent processing too many messages on event loop
 mailbox_assert = []
@@ -35,7 +35,6 @@ mailbox_assert = []
 [dependencies]
 actix-rt = { git = 'https://github.com/inq/actix-net.git'}
 actix_derive = { git = 'https://github.com/inq/actix.git', optional = true }
-actix-macros = { git = 'https://github.com/inq/actix-net.git', features = ["actix-reexport"] }
 
 bitflags = "1.2"
 bytes = "1"
