@@ -11,9 +11,9 @@ exclude = [".gitignore"]
 edition = "2018"
 
 [dependencies]
-actix = { version = "0.10", default-features = false }
+actix = { git = 'https://github.com/inq/actix.git', default-features = false }
 fnv = "1.0.6"
 log = "0.4.5"
 
 [dev-dependencies]
-actix-web = { version = "3", default-features = false }
+actix-web = { git = 'https://github.com/inq/actix-web.git', default-features = false }
